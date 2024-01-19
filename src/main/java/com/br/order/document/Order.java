@@ -3,9 +3,15 @@ package com.br.order.document;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Document(collection  = "order")
 public class Order {
 
-	private Long id;
+	@Id
+	private String id;
 
 	private List<OrderProducts> product;
 
@@ -21,7 +27,7 @@ public class Order {
 
 	}
 
-	public Order(Long id, List<OrderProducts> product, LocalDateTime createdAt, String transactionId,
+	public Order(String id, List<OrderProducts> product, LocalDateTime createdAt, String transactionId,
 			double totalAmount, int totalItens) {
 		super();
 		this.id = id;
@@ -32,11 +38,11 @@ public class Order {
 		this.totalItens = totalItens;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

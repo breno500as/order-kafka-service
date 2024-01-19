@@ -3,8 +3,14 @@ package com.br.order.document;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Document(collection = "event")
 public class Event {
 
+	@Id
 	private String id;
 
 	private String orderId;
