@@ -34,7 +34,7 @@ public class OrderService {
 	public Order save(OrderRequest orderRequest) {
 
 		var order = new Order();
-		order.setProduct(orderRequest.getProducts());
+		order.setProducts(orderRequest.getProducts());
 		order.setCreatedAt(LocalDateTime.now());
 		order.setTransactionId(String.format(TRANSACTION_ID_PATTERN, Instant.now().toEpochMilli(), UUID.randomUUID()));
 
