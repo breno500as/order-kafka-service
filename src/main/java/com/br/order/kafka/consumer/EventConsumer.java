@@ -22,7 +22,7 @@ public class EventConsumer {
 	
 	@KafkaListener(
 			groupId = "${spring.kafka.consumer.group-id}", 
-			topics = "${spring.kafka.topic.notity-ending}"
+			topics = "${spring.kafka.topic.notify-ending}"
 	)
 	public void consumeNotifyEndingEvent(String payload) {
 		this.logger.info("Receiving ending notification event {} from notify ending topic", payload);

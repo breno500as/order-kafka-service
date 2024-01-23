@@ -42,7 +42,7 @@ public class KafkaConfig {
 	@Value("${spring.kafka.topic.start-saga}")
 	private String startSagaTopic;
 
-	@Value("${spring.kafka.topic.notity-ending}")
+	@Value("${spring.kafka.topic.notify-ending}")
 	private String notifyEndingTopic;
 	@Bean
 	ConsumerFactory<String, String> consumerFactory() {
